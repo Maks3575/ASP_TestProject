@@ -1,0 +1,28 @@
+﻿@model int
+
+
+@{
+    ViewBag.Title = "Загрузка файла";
+}
+
+<h3>Выберите файл для загрузки</h3>
+
+
+@using (@Html.BeginForm("UploadFile", "Home", FormMethod.Post, new { @id = "form1", @enctype = "multipart/form-data" }))
+{
+
+    @Html.Hidden("idIndividualPlan", Model)
+    <table enctype="multipart/form-data" method="post">
+        <tr>
+            <td>
+                <input type="file" name="file_Uploader" class="btn btn-default" accept=".docx">
+            </td>
+            <td>
+                <input type="submit" id="bttn_Upload" class="btn btn-default" value="Загрузить" />
+            </td>
+
+        </tr>
+    </table>
+
+}
+
